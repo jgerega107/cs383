@@ -13,7 +13,6 @@ main:
 	MOV X19, XZR //r1
 	MOV X20, #1 //r2
 	LDR X23, [X1] //actually load n
-	SUB X23, X23, #1
 loop:
 	CMP X23, XZR //see if counter (n) is zero
 	BEQ exit //if zero, exit and print
@@ -29,7 +28,7 @@ exit:
 	BR X30 //return
 .data
 n:
-	.dword 6
+	.dword 0
 str:
 	.ascii "%d\n\0"
 .end
