@@ -35,8 +35,7 @@ factorial:
 	B factorial
 taylor:
 	SCVTF D19, X22 //convert factorial term to double
-	FDIV D5, D4, D19 //divide 1/factorial
-	FMUL D5, D5, D2 //multiply i-th term by x^n
+	FDIV D5, D2, D19 //divide x^n/factorial
 	FADD D3, D3, D5 //add to total sum
 	ADD X19, X19, #1 //citerations++
 	B loop
@@ -47,8 +46,8 @@ exit:
 	BR X30 //return
 .data
 x:
-.double 9.0 //x
+.double 7 //x
 i:
-.dword 7 //total iterations
+.dword 14 //total iterations
 str:
 	.ascii "The approximation is %f\n\0" //printed string
