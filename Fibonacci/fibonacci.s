@@ -28,7 +28,7 @@ exit:
 	BR X30 //return
 .data
 n:
-	.dword 0
+	.dword 6
 str:
 	.ascii "%d\n\0"
 .end
